@@ -3,10 +3,11 @@ import React from 'react'
 import albumImage from "../../images/album.webp";
 
 const PlayerComponent = () => {
-  const currentColor = "#000"
-  const favouriteColor = '#d21c1c'
-  const albumTitle:string="A Sky Full of Stars"
-  const albumName:string="Ghost Stories"
+  const currentColor = "#000";
+  const favouriteColor = '#d21c1c';
+  const albumTitle: string = "A Sky Full of Stars";
+  const albumName: string = "Ghost Stories";
+  const isPlaying: boolean = true;
 
   return (
     <div className="w-full">
@@ -40,7 +41,15 @@ const PlayerComponent = () => {
                   <svg className="w-8 h-8" fill={currentColor} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M4 5h3v10H4V5zm12 0v10l-9-5 9-5z" /></svg>
                 </div>
                 <div className="text-white p-8 rounded-full bg-red-light shadow-lg">
-                  <svg className="w-8 h-8" fill={currentColor} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M5 4h3v12H5V4zm7 0h3v12h-3V4z" /></svg>
+                  {
+                    isPlaying ? (
+                      <svg className="w-8 h-8" fill={currentColor} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M5 4h3v12H5V4zm7 0h3v12h-3V4z" /></svg>
+
+                    ) :
+                      (
+                        <svg className="w-8 h-8" fill={currentColor} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M29.6901 16.6608L4.00209 0.747111C2.12875 -0.476923 0.599998 0.421814 0.599998 2.75545V33.643C0.599998 35.9728 2.12747 36.8805 4.00209 35.6514L29.6901 19.7402C29.6901 19.7402 30.6043 19.0973 30.6043 18.2012C30.6043 17.3024 29.6901 16.6608 29.6901 16.6608Z" className="fill-slate-500 dark:fill-slate-400"/></svg>
+                      )
+                  }
                 </div>
                 <div className="text-grey-darker">
                   <svg className="w-8 h-8" fill={currentColor} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 5h3v10h-3V5zM4 5l9 5-9 5V5z" /></svg>
